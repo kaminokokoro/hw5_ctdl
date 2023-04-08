@@ -41,7 +41,14 @@ public class ArrayBinaryTree<E> implements BinaryTreeInterface<E> {
     }
 
     @Override
-    public int numChildren(Object p) {
+    public int numChildren(E p) {
+        int result = 0;
+        if(array[indexOf(p)*2+1]!=null)result++;
+        if(array[indexOf(p)*2+2]!=null)result++;
+        return result;
+    }
+
+    public int indexOf(Object p) {
         int i=0;
        while(i==n){
             if(array[i]!=null){
@@ -51,27 +58,27 @@ public class ArrayBinaryTree<E> implements BinaryTreeInterface<E> {
                 return i;
             }
         }
-        return 0;
+        return -1;
     }
 
     @Override
     public Object parent(Object p) {
-        return array[(numChildren(p)-1)/2];
+        return array[(indexOf(p)-1)/2];
     }
 
     @Override
     public Object left(Object p) {
-        return array[(numChildren(p)*2)+1];
+        return array[(indexOf(p)*2)+1];
     }
 
     @Override
     public Object right(Object p) {
-        return array[(numChildren(p)*2)+2];
+        return array[(indexOf(p)*2)+2];
     }
 
     @Override
     public Object sibling(Object p) {
-        return array[numChildren(p)+1];
+        return array[indexOf(p)+1];
     }
     //access methods
 }
