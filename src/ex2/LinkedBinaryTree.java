@@ -63,31 +63,47 @@ public class LinkedBinaryTree<E> implements BinaryTreeInterface<E> {
         return size==0;
     }
 
+    public Node<E> findNode(Node node,E element){
+        if(node==element){
+            return node;
+        }else {
+            if(node.left!=null){
+                findNode(node.left,element);
+            }
+            if(node.right!=null){
+                findNode(node.right,element);
+            }
+        }
+        return null;
+    }
+
     @Override
     public int numChildren(E p) {
         int result = 0;
-        if(((Node)p).left!=null)result++;
-        if(((Node)p).right!=null)result++;
+        Node node = findNode(root,p);
+        if(node.left!=null)result++;
+        if(node.right!=null)result++;
         return result;
     }
 
     @Override
     public E parent(E p) {
-        return (E) ((Node)p).parent;
+
+        return findNode(root,p).parent.element;
     }
 
     @Override
     public E left(E p) {
-        return (E) ((Node)p).left;
+        return findNode(root,p).left.element;
     }
 
     @Override
     public E right(E p) {
-        return (E) ((Node)p).right;
+        return findNode(root,p).right.element;
     }
 
     @Override
     public E sibling(E p) {
-        return (E) (((Node)p).parent.left==p?((Node)p).parent.right:((Node)p).parent.left);
+        return findNode(root,p).parent.left.element==p?findNode(root,p).parent.right.element:findNode(root,p).parent.left.element;
     }
 }
