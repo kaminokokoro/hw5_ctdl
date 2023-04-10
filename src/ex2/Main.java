@@ -23,7 +23,11 @@ public class Main {
         expressionTree.preorderPrint(root);
         System.out.println();
         expressionTree.postorderPrint(root);
-
+        System.out.println();
+        expressionTree.inorderPrint(root);
+        System.out.println("= " + expressionTree.caculateExpressionTree(root));
 
     }
+
+
 }
