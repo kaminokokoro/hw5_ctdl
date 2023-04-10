@@ -1,9 +1,24 @@
 package ex1;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class PrintTree {
-    public static void main(String[] args) {
+    static FileWriter file;
+
+    static {
+        try {
+            file = new FileWriter("output.txt");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    public static void main(String[] args) throws IOException {
         LinkedBinaryTree<Integer> tree = new LinkedBinaryTree<>();
         LinkedBinaryTree.Node<Integer> root = tree.addRoot(0);
         tree.addLeft(root, 1);
@@ -33,28 +48,33 @@ public class PrintTree {
         //System.out.println(tree2.indexOf(0));
 
         System.out.println("Array Tree");
+        file.write("Array Tree\r");
         PrintArrayTree(tree2, tree2.get(0), "");
         System.out.println("Linked Tree");
+        file.write("Linked Tree\r");
         PrintLinkedTree(tree, root, "");
+        file.close();
     }
 
 
 
-    public static void PrintArrayTree(ArrayBinaryTree<Integer> tree, int n,String space) {
-        String space2 = space + " ";
+    public static void PrintArrayTree(ArrayBinaryTree<Integer> tree, int n,String space) throws IOException {
+        String space2 = space + "  ";
         if(tree.indexOf(n)!=-1){
             if(tree.left(n)!=null)PrintArrayTree(tree,tree.left(n),space2);
             System.out.println(space+n);
+            file.write(space+n+"\r");
             if(tree.right(n)!=null)PrintArrayTree(tree,tree.right(n),space2);
 
         }
     }
 
-    public static void PrintLinkedTree(LinkedBinaryTree<Integer> tree, LinkedBinaryTree.Node<Integer> n,String space) {
-        String space2 = space + " ";
+    public static void PrintLinkedTree(LinkedBinaryTree<Integer> tree, LinkedBinaryTree.Node<Integer> n,String space) throws IOException {
+        String space2 = space + "  ";
         if(n!=null){
             if(n.getLeft()!=null)PrintLinkedTree(tree,n.getLeft(),space2);
             System.out.println(space+n.getElement());
+            file.write(space+n.getElement()+"\r");
             if(n.getRight()!=null)PrintLinkedTree(tree,n.getRight(),space2);
 
         }

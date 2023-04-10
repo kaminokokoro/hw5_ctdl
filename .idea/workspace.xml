@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf1554c9-f134-410b-b121-2134afbf22c7" name="Changes" comment="fix findnode and indexof and add print tree">
+    <list default="true" id="cf1554c9-f134-410b-b121-2134afbf22c7" name="Changes" comment="finish ex1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ex1/PrintTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/PrintTree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1680967450576</updated>
       <workItem from="1680967452162" duration="12122000" />
-      <workItem from="1681125897755" duration="7000000" />
+      <workItem from="1681125897755" duration="7922000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1680971614627</created>
@@ -100,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681134859678</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="finish ex1">
+      <created>1681135097816</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681135097816</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +130,7 @@
     <MESSAGE value="fix bug and update" />
     <MESSAGE value="fix ex2" />
     <MESSAGE value="fix findnode and indexof and add print tree" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix findnode and indexof and add print tree" />
+    <MESSAGE value="finish ex1" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish ex1" />
   </component>
 </project>
