@@ -50,35 +50,86 @@ public class ArrayBinaryTree<E> implements BinaryTreeInterface<E> {
 
     public int indexOf(Object p) {
         int i=0;
-       while(i==n){
+        int countSize = 0;
+       while(countSize<n){
             if(array[i]!=null){
-                i++;
+                countSize++;
             }
+
             if(array[i]==p){
                 return i;
             }
+            i++;
         }
         return -1;
     }
 
     @Override
-    public Object parent(Object p) {
+    public E parent(E p) {
         return array[(indexOf(p)-1)/2];
     }
 
     @Override
-    public Object left(Object p) {
+    public E left(E p) {
         return array[(indexOf(p)*2)+1];
     }
 
     @Override
-    public Object right(Object p) {
+    public E right(E p) {
         return array[(indexOf(p)*2)+2];
     }
 
     @Override
-    public Object sibling(Object p) {
+    public E sibling(E p) {
         return array[indexOf(p)+1];
     }
+
+//    public int depth(E p){
+//        int index = indexOf(p);
+//        int depth = 1;
+//        while (Math.pow(2,depth)+2>index){
+//            depth++;
+//        }
+//        return depth;
+//    }
+
+//    public int height(E p){
+//        int index = indexOf(p);
+//        int height = 1;
+//        int countSize = 0;
+//        int i=0;
+//        while(countSize==index) {
+//            if (array[i] != null) {
+//                countSize++;
+//            }
+//            i++;
+//        }
+//        while (Math.pow(2,height)+2>countSize){
+//            height++;
+//        }
+//        return height;
+//    }
+        public int heightOfTree(){
+            int indexMax=0;
+            int countSize = 0;
+            while(countSize<n){
+                if(array[indexMax]!=null){
+                    countSize++;
+                }
+                indexMax++;
+            }
+            indexMax--;
+            //System.out.println(indexMax);
+            int height = 1;
+            while (Math.pow(2,height)-2<indexMax){
+                height++;
+            }
+            return height;
+        }
+
+        public E get(int index){
+            return array[index];
+        }
+
     //access methods
 }

@@ -1,4 +1,4 @@
-package ex2;
+package ex1;
 
 public class LinkedBinaryTree<E> implements BinaryTreeInterface<E> {
     protected static class Node<E> {
@@ -13,6 +13,38 @@ public class LinkedBinaryTree<E> implements BinaryTreeInterface<E> {
             this.parent = above;
             this.left = leftChild;
             this.right = rightChild;
+        }
+
+        public E getElement() {
+            return element;
+        }
+
+        public void setElement(E element) {
+            this.element = element;
+        }
+
+        public Node<E> getParent() {
+            return parent;
+        }
+
+        public void setParent(Node<E> parent) {
+            this.parent = parent;
+        }
+
+        public Node<E> getLeft() {
+            return left;
+        }
+
+        public void setLeft(Node<E> left) {
+            this.left = left;
+        }
+
+        public Node<E> getRight() {
+            return right;
+        }
+
+        public void setRight(Node<E> right) {
+            this.right = right;
         }
     }
     protected Node<E> root = null; // root of the tree
@@ -64,17 +96,23 @@ public class LinkedBinaryTree<E> implements BinaryTreeInterface<E> {
     }
 
     public Node<E> findNode(Node node,E element){
-        if(node==element){
+        Node result = null;
+        if(node.element==element){
+            //System.out.println(node.element);
             return node;
         }else {
-            if(node.left!=null){
-                findNode(node.left,element);
+
+            if(node.left!=null&&result==null){
+                //System.out.println(node.left.element);
+                result=findNode(node.left,element);
             }
-            if(node.right!=null){
-                findNode(node.right,element);
+
+            if(node.right!=null && result==null){
+                //System.out.println(node.right.element);
+                result= findNode(node.right,element);
             }
         }
-        return null;
+        return result;
     }
 
     @Override
@@ -88,7 +126,6 @@ public class LinkedBinaryTree<E> implements BinaryTreeInterface<E> {
 
     @Override
     public E parent(E p) {
-
         return findNode(root,p).parent.element;
     }
 
@@ -106,4 +143,5 @@ public class LinkedBinaryTree<E> implements BinaryTreeInterface<E> {
     public E sibling(E p) {
         return findNode(root,p).parent.left.element==p?findNode(root,p).parent.right.element:findNode(root,p).parent.left.element;
     }
+
 }
