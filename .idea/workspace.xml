@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf1554c9-f134-410b-b121-2134afbf22c7" name="Changes" comment="finish ex1">
+    <list default="true" id="cf1554c9-f134-410b-b121-2134afbf22c7" name="Changes" comment="fix PrintTree.java">
+      <change afterPath="$PROJECT_DIR$/src/ex2/ExpressionTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ex2/LinkedBinaryTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ex2/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex1/PrintTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/PrintTree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +44,20 @@
       <recent name="ex2" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ex2.Main" />
+      <module name="hw5_ctdl" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ex2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PrintTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ex1.PrintTree" />
       <module name="hw5_ctdl" />
@@ -58,6 +73,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.PrintTree" />
       </list>
     </recent_temporary>
@@ -71,7 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1680967450576</updated>
       <workItem from="1680967452162" duration="12122000" />
-      <workItem from="1681125897755" duration="7922000" />
+      <workItem from="1681125897755" duration="9603000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1680971614627</created>
@@ -108,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681135097816</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix PrintTree.java">
+      <created>1681136140786</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681136140786</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +154,7 @@
     <MESSAGE value="fix ex2" />
     <MESSAGE value="fix findnode and indexof and add print tree" />
     <MESSAGE value="finish ex1" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish ex1" />
+    <MESSAGE value="fix PrintTree.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix PrintTree.java" />
   </component>
 </project>
