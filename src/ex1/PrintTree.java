@@ -30,17 +30,32 @@ public class PrintTree {
         tree2.setRight(1, 4);
         tree2.setLeft(2, 5);
         tree2.setRight(2, 6);
-        System.out.println(tree2.indexOf(0));
-        PrintArrayTree(tree2, tree2.get(0));
+        //System.out.println(tree2.indexOf(0));
+
+        System.out.println("Array Tree");
+        PrintArrayTree(tree2, tree2.get(0), "");
+        System.out.println("Linked Tree");
+        PrintLinkedTree(tree, root, "");
     }
 
 
 
-    public static void PrintArrayTree(ArrayBinaryTree<Integer> tree, int n) {
+    public static void PrintArrayTree(ArrayBinaryTree<Integer> tree, int n,String space) {
+        String space2 = space + " ";
         if(tree.indexOf(n)!=-1){
-            if(tree.left(n)!=null)PrintArrayTree(tree,tree.left(n));
-            System.out.println(n);
-            if(tree.right(n)!=null)PrintArrayTree(tree,tree.right(n));
+            if(tree.left(n)!=null)PrintArrayTree(tree,tree.left(n),space2);
+            System.out.println(space+n);
+            if(tree.right(n)!=null)PrintArrayTree(tree,tree.right(n),space2);
+
+        }
+    }
+
+    public static void PrintLinkedTree(LinkedBinaryTree<Integer> tree, LinkedBinaryTree.Node<Integer> n,String space) {
+        String space2 = space + " ";
+        if(n!=null){
+            if(n.getLeft()!=null)PrintLinkedTree(tree,n.getLeft(),space2);
+            System.out.println(space+n.getElement());
+            if(n.getRight()!=null)PrintLinkedTree(tree,n.getRight(),space2);
 
         }
     }
